@@ -7,11 +7,14 @@
   },
   "content_scripts": [
     {
-      "matches": [ "http://opentext/*", "https://opentext/*" ],
+      "matches": [ "http://opentext/*ALP*", "https://opentext/*ALP*" ],
       "js": [ "lib/jquery-3.3.1.min.js", "scrape.js" ]
     }
   ],
   "browser_action": {
-    "default_icon": "img/icon.png"
+    "default_icon": {                    
+      "24": "img/icon.png"
+    },
+    "default_title": "Shiga OpenText InfoBox"
   }
 }
