@@ -35,3 +35,40 @@ $('#SearchForm').after(
   ots_show_text(32, true) +
   "</p></div>"
 ); //.after
+
+(function() {
+    var el = document.createElement("div"),
+        b = document.getElementsByTagName("body")[0],
+        otherlib = !1,
+        msg = "";
+    el.style.position = "fixed";
+
+    function showMsg() {
+        var txt = document.createTextNode(msg);
+        el.appendChild(txt), b.appendChild(el), window.setTimeout(function() {
+            txt = null, typeof jQuery == "undefined" ? b.removeChild(el) : (jQuery(el).fadeOut("slow", function() {
+                jQuery(this).remove()
+            }), otherlib && (window.$jq = jQuery.noConflict()))
+        }, 2500)
+    }
+    if (typeof jQuery != "undefined") return msg = "This page already using jQuery v" + jQuery.fn.jquery, showMsg();
+    typeof $ == "function" && (otherlib = !0);
+
+    function getScript(url, success) {
+        var script = document.createElement("script");
+        script.src = url;
+        var head = document.getElementsByTagName("head")[0],
+            done = !1;
+        script.onload = script.onreadystatechange = function() {
+            !done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") && (done = !0, success(), script.onload = script.onreadystatechange = null, head.removeChild(script))
+        }, head.appendChild(script)
+    }
+    getScript("//code.jquery.com/jquery.min.js", function() {
+        return typeof jQuery == "undefined" ? msg = "Sorry, but jQuery was not able to load" : (msg = "This page is now jQuerified with v" + jQuery.fn.jquery, otherlib && (msg += " and noConflict(). Use $jq(), not $().")), showMsg()
+    })
+})();
+$('#gb').remove();
+$('#gba').remove();
+$('#gt-appbar').remove();
+$('#gt-ft').remove();
+$('#gt-ft-res').remove();
