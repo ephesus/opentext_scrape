@@ -19,9 +19,9 @@ function show_related_case_links() {
   var string = "";
   var full = $('tr.browseRow1 td:nth-child(32)');
 
-  $.each($('tr.browseRow1 td:nth-child(32) .simpleResultTabColumn').text().split(/\r?\n/), function(c, e){
+  $.each($('tr.browseRow1 td:nth-child(32) .simpleResultTabColumn').text().split(/ALP/), function(c, e){
     if (e.length > 1) {
-      string += '<p><a style="font-size:1.2em;" href="http://opentext/OTCS/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22' + e + '%22%29">' + e + '</a></p>';
+      string += '<p><a style="font-size:1.2em;" href="http://opentext/OTCS/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22ALP' + e + '%22%29">ALP' + e + '</a></p>';
     }
   });
 
