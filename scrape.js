@@ -21,7 +21,7 @@ function show_related_case_links() {
 
   $.each($('tr.browseRow1 td:nth-child(32) .simpleResultTabColumn').text().split(/ALP/), function(c, e){
     if (e.length > 1) {
-      string += '<p><a style="font-size:1.2em;" href="http://opentext/OTCS/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22ALP' + e + '%22%29">ALP' + e + '</a></p>';
+      string += '<p><a style="font-size:1.2em;" href="http://opentext/OTCS/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22ALP' + e.trim() + '%22%29">ALP' + e.trim() + '</a></p>';
     }
   });
 
@@ -30,7 +30,7 @@ function show_related_case_links() {
 
 function ots_show_text(cell_num, get_html = false) {
   element = $('tr.browseRow1 td:nth-child('+cell_num+')')
-  return get_html ? element.html() : element.text();
+  return get_html ? element.html() : element.text().trim();
 }
 
 $('#SearchForm').after(
