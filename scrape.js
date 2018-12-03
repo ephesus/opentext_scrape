@@ -42,8 +42,7 @@ $('#SearchForm').after(
   ots_show_text(14) +
   "<br/>" + repeat(spaces, 2) + "en:" + repeat(spaces, 4) + 
   ots_show_text(15) +
-  "<br/><p><b>Application No.</b>: &nbsp; " +
-  ots_show_text(21).replace('特願','') +
+  "<br/><p><b>Application No.</b>: &nbsp; " + ots_show_text(21).replace('特願','') + ' | <a href="http://wlang.wrive.com/en/search/'+ ots_show_text(3).replace('ALP','') + '/' + ots_show_text(21).replace('特願','') + '">WLANG Results </a>' +
   "<br/><p><b>Related Case Numbers</b>:" +
   show_related_case_links() +
   "</p></div>"
