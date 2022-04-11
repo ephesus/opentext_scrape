@@ -84,3 +84,4 @@ $('#gba').remove();
 $('#gt-appbar').remove();
 $('#gt-ft').remove();
 $('#gt-ft-res').remove();
+$('.lmt__docTrans-tab-container').remove();
