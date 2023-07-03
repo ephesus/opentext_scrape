@@ -20,7 +20,7 @@ function show_related_case_links() {
   var full = $('tr.browseRow1 td:nth-child(32)');
 
   $.each($('tr.browseRow1 td:nth-child(32) .simpleResultTabColumn').text().split(/AL/), function(c, e){
-    if (e.length > 1) {
+    if (e.length > 3) {
       string += '<p><a style="font-size:1.2em;" href="https://opentextweb.shigapatent.com/otcs/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22AL' + e.trim() + '%22%29">AL' + e.trim() + '</a></p>';
     }
   });
