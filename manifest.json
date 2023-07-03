@@ -1,20 +1,22 @@
+
 {
-  "manifest_version": 2,
-  "name": "OpenText Information Viewer",
-  "version": "0.1",
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "content_scripts": [
-    {
-      "matches": [ "http://opentextweb.shigapatent.com/*AL*", "https://opentextweb.shigapatent.com/*AL*", "https://www.deepl.com/*", "http://translate.google.com/*", "https://translate.google.com/*" ],
-      "js": [ "lib/jquery-3.3.1.min.js", "scrape.js" ]
-    }
-  ],
-  "browser_action": {
-    "default_icon": {                    
-      "24": "img/icon.png"
+    "name": "OpenText Information Viewer",
+    "description": "Make helpful links on OpenText pages to assist translation",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
     },
-    "default_title": "Shiga OpenText InfoBox"
-  }
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "content_scripts": [
+      {
+        "matches": [ "https://opentextweb.shigapatent.com/*" ],
+        "js": ["lib/jquery-3.3.1.min.js", "scrape.js"]
+      }
+    ]
 }
