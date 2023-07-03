@@ -7,7 +7,7 @@
   },
   "content_scripts": [
     {
-      "matches": [ "http://opentextweb.shigapatent.com/*ALP*", "https://opentextweb.shigapatent.com/*ALP*", "https://www.deepl.com/*", "http://translate.google.com/*", "https://translate.google.com/*" ],
+      "matches": [ "http://opentextweb.shigapatent.com/*AL*", "https://opentextweb.shigapatent.com/*AL*", "https://www.deepl.com/*", "http://translate.google.com/*", "https://translate.google.com/*" ],
       "js": [ "lib/jquery-3.3.1.min.js", "scrape.js" ]
     }
   ],

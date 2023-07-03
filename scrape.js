@@ -19,9 +19,9 @@ function show_related_case_links() {
   var string = "";
   var full = $('tr.browseRow1 td:nth-child(32)');
 
-  $.each($('tr.browseRow1 td:nth-child(32) .simpleResultTabColumn').text().split(/ALP/), function(c, e){
+  $.each($('tr.browseRow1 td:nth-child(32) .simpleResultTabColumn').text().split(/AL/), function(c, e){
     if (e.length > 1) {
-      string += '<p><a style="font-size:1.2em;" href="http://opentext/OTCS/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22ALP' + e.trim() + '%22%29">ALP' + e.trim() + '</a></p>';
+      string += '<p><a style="font-size:1.2em;" href="https://opentextweb.shigapatent.com/otcs/cs.exe?func=search&templateID=1720948&boolean1=or&where1=%28[qlregion+Attr_57105_2]+%22AL' + e.trim() + '%22%29">AL' + e.trim() + '</a></p>';
     }
   });
 
@@ -42,7 +42,7 @@ $('#SearchForm').after(
   ots_show_text(14) +
   "<br/>" + repeat(spaces, 2) + "en:" + repeat(spaces, 4) + 
   ots_show_text(15) +
-  "<br/><p><b>Application No.</b>: &nbsp; " + ots_show_text(21).replace('特願','') + ' | <a href="http://wlang.wrive.com/en/search/'+ ots_show_text(3).replace('ALP','') + '/' + ots_show_text(21).replace('特願','') + '">WLANG Results </a>' +
+  "<br/><p><b>Application No.</b>: &nbsp; " + ots_show_text(21).replace('特願','') + ' | <a href="http://wlang.wrive.com/en/search/'+ ots_show_text(3) + '/' + ots_show_text(21).replace('特願','') + '">WLANG Results </a>' +
   "<br/><p><b>Related Case Numbers</b>:" +
   show_related_case_links() +
   "</p></div>"
